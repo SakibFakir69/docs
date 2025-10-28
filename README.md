@@ -20,3 +20,18 @@ const num = useRef();
 console.log(num.current)
 console.log(num.current.value)
 `
+#useState
+`useState is a hook in react functional component use for store data and manage state in component 
+every time state update re-render component and update on ui 
+"example"
+const [ state , setState] = useState(initialValue)
+state => hold initial value 
+setState => set new value on state 
+initialValue => new initial value 
+
+"useCase" => update data => handle form 
+const [ name , setName ] = useState('')
+console.log(name)
+</input onChange={(e)=> setName(e.target.value)}>
+
+`

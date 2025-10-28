@@ -4,6 +4,7 @@ function App() {
   console.log("re-render")
 
   // useState react functional hook use for store data and manage state in component
+  // every state change component re-render
   let initialValue = 0;
 
   const [state, setState] = useState(initialValue);
