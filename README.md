@@ -19,7 +19,9 @@ const num = useRef();
 /// attach reference of num , that can access input element and value 
 console.log(num.current)
 console.log(num.current.value)
-`
+
+
+======================================================================
 #useState
 `useState is a hook in react functional component use for store data and manage state in component 
 every time state update re-render component and update on ui 
