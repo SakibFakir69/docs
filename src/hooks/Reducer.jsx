@@ -1,3 +1,6 @@
+
+
+
 import React, { useReducer } from "react";
 
 function App() {
@@ -26,7 +29,7 @@ function App() {
   /// state > gave present value of state
   // initalState > we can set inital value on state
   // dispatch > perfrom state change based on reducer function
-  /// reducerFn -> take current state and action and retuen new state
+  /// reducerFn -> take current state and action and return new state
 
 
   console.log(state); /// get present value
@@ -35,7 +38,9 @@ function App() {
     <div>
       <p>{state?.count}</p>
       <button onClick={() => dispatch({ type: "inc" })}>inc</button>
+      {/* perform inc opration */}
       <button onClick={() => dispatch({ type: "dec" })}>Dec</button>
+      {/* perfrom dec opration */}
 
       <h1>Learning useReducer</h1>
     </div>

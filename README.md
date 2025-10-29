@@ -56,3 +56,30 @@ mount > first effect run ( when component add to dom )
 update > if component state or props change use effect 
 unmount > component removed from dom 
 `
+
+useReducer
+markdown "useReducer"
+` useReducer is a react functional component hook use to manage and store complex logic 
+'syantax`
+<!-- declare reducerFn -->
+const reducerFn = (state,type)=>{
+
+    switch(type?.action)
+    {
+        case 'inc':
+        return {state:state.count+1}
+        case 'dec':
+        return {state: state.count-1}
+        default:
+        return state;
+    }
+
+}
+const [ state , distpatch] = useReducer(reducerFn , initalValue);
+
+ # 
+ 1. reducerFn ->  take current state and action and retuen new state 
+ 2.state -> store current state 
+ 3.initalValue -> gave starting value to state 
+ 4.distpatch ->  perfrom action based on reducer function 
+`
