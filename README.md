@@ -1,5 +1,9 @@
 
 
+
+## useRef
+
+```markdown
 #useRef
 
 `useRef is a react way access dom in react app / in js we access dom use getElementById 
@@ -20,9 +24,8 @@ const num = useRef();
 console.log(num.current)
 console.log(num.current.value)
 
-
-======================================================================
-#useState
+useState
+markdown#useState
 `useState is a hook in react functional component use for store data and manage state in component 
 every time state update re-render component and update on ui 
 "example"
@@ -35,5 +38,21 @@ initialValue => new initial value
 const [ name , setName ] = useState('')
 console.log(name)
 </input onChange={(e)=> setName(e.target.value)}>
+`
 
+useEffect
+markdown"useEffect"
+`
+useEffect is a  hook in react functional component , it use to handel side effect in react funtional 
+component
+
+#use case 
+ 1. data fetch 
+ 2. event subcription
+ 3. dom manupulation 
+ 4. setItem on localstroage
+
+mount > first effect run ( when component add to dom )
+update > if component state or props change use effect 
+unmount > component removed from dom 
 `
