@@ -83,3 +83,16 @@ const [ state , distpatch] = useReducer(reducerFn , initalValue);
  3.initalValue -> gave starting value to state 
  4.distpatch ->  perfrom action based on reducer function 
 `
+
+useCallback
+markdown "useCallback"
+` useCallback is react funtional component built in hook , this hook use to prevent re-created
+function on every re-render 
+react create re-render on every state change and use callback prevent the re-create function 
+
+syntax and example
+const [ count , setCount ] = useState(0);
+const handleIncrement =useCallback(()=>{
+    setCount(count+1)
+}[]);
+`
