@@ -96,3 +96,38 @@ const handleIncrement =useCallback(()=>{
     setCount(count+1)
 }[]);
 `
+
+memo
+markdown "memo"
+` memo is a react hook and high order component , memo use to rembember component and prevent from unnessary re-render component
+
+const Child= React.memo(()=>{
+
+    return (
+        <div>
+        <h1>Hello from child</h1>
+       </div>
+    )
+
+
+})
+
+
+ `
+useMemo
+markdown "useMemo"
+useMemo use to remember value inside useMemeo and useMemo use to optimize performance 
+useMemo only care about depedency 
+if depedency change useMemo run 
+
+const memo = useMemo(()=>{
+
+    for(let i=0; i<10000; i++)
+    {
+        console.log(i)
+    }
+
+    return i; /// remember this value 
+
+},[count]) // count change usememo run
+`
