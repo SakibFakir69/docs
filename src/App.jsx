@@ -1,9 +1,10 @@
 
 
 
-import React, { useEffect, useRef, useState } from 'react'
+import React, {  createContext, useEffect, useRef, useState } from 'react'
+export const myContext = createContext();
 
-function App() {
+function App({children}) {
 
 
   const myRef = useRef();
@@ -23,9 +24,12 @@ function App() {
 
   return (
     <div>
-      <input type='text' ref={myRef} placeholder='Enter your text'/>
-      <p>Update counter: {count}</p>
-      <button ref={prevRef} onClick={()=> setCount(count+1)}>Click counter</button>
+     <myContext.Provider value={{count}}>
+      {Children}
+      {/* all children component render here
+       */}
+
+     </myContext.Provider>
       
     </div>
   )
