@@ -33,3 +33,40 @@ function App() {
 }
 
 export default App;
+
+
+
+
+
+// import React , {useState} from "react";
+
+// function App() {
+//   const [tasks, setTasks] = useState([
+//     { id: 1, title: "Learn React", done: false },
+//     { id: 2, title: "Build Project", done: false },
+//   ]);
+
+
+//   const handlUpdate = (id, title)=>{
+
+//     setTasks(prev => prev.map((item)=> item.id===id ? {...item,title:title} : item))
+
+//   }
+  
+//   console.log(tasks);
+
+//   return <div>
+
+//     {
+//       tasks.map((item)=> (
+//         <div key={item.key}>
+//           <p>{item.title}</p>
+//           <button onClick={()=> handlUpdate(item.id,'newTitle')}>update</button>
+
+//         </div>
+//       ))
+//     }
+//   </div>;
+// }
+
+// export default App;
