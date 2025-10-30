@@ -1,60 +1,31 @@
 
 
-// Ngrok
-// Ngrok is a reverse proxy that create secure tunnel from public endpoint to localy running services
-// we can share share our development to client and other locally (expose our local development to internet)
-// Ngrok assign public url to our localhost
 
-
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 function App() {
 
-  const [isActive , setIsActive ] = useState(false);
+
+  const myRef = useRef();
+  const prevRef = useRef();
+  const [ count , setCount ] = useState(0);
 
 
   useEffect(()=>{
-
-    if(!isActive)
-    {
-      return "User are not Active"
-    }
-
-   
-    const apiFetch = ()=>{
-       const res = await fetch();
-    const data = await res.json();
-    // fetch data after user have 
-    }
-    apiFetch();
-    // call api fetch
+    myRef.current.focus();
+    prevRef.current=count;
 
 
-    const interValId = ()=> setInterval(apiFetch,5000);
-
-
-
-
-    // clean up 
-    /// clean up remove from dom 
-
-    return ()=> clearInterval(interValId);
-
-
-
-
-  },[isActive]);
-  /// re-run if use isActive change 
-
-
-
-
-
-
+  },[count])
+  console.log(myRef.current)
+  console.log(prevRef.current , ' store previous estate')
 
 
   return (
     <div>
+      <input type='text' ref={myRef} placeholder='Enter your text'/>
+      <p>Update counter: {count}</p>
+      <button ref={prevRef} onClick={()=> setCount(count+1)}>Click counter</button>
       
     </div>
   )
