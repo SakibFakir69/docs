@@ -1,53 +1,48 @@
 
 
 
-import React, { createContext, useCallback, useContext, useMemo, useRef, useState } from 'react'
-import Child from './Child';
-
-// create Context
 
 
-// eslint-disable-next-line react-refresh/only-export-components
-export const ThemeContext = createContext();
-
+import React, { useEffect, useLayoutEffect, useState } from 'react'
 
 function App() {
 
-  // prop driling work passing props to another component then another component passing props
-  // target component then come useContext hook help to passing data without prop driling 
-  // passing data one component to another component 
+  const [count, setCount ] = useState(0);
 
-   /// createContext 
-  //  wrap child
-  /// recive value on child component
-
-  const [ theme , setTheme ] = useState("white");
-
-  console.log(theme)
+  const [ marginTop , setMarginTop ] = useState(10);
 
 
 
 
+  useLayoutEffect(()=>{
 
-  
- 
-  
+    for(let i=0; i<1000; i++)
+    {
+      ;
+    }
+    
+    setMarginTop(marginTop+10);
+
+
+  },[count])
+
+
 
 
   return (
     <div>
-      <ThemeContext.Provider value={{theme, setTheme}}>
-        <Child/>
 
-      </ThemeContext.Provider>
+      <p>{count}</p>
+      <button onClick={()=> setCount(count+1)}  >Submit</button>
+
+      <div style={{height:"400px" , width:"500px", border:"2px solid red",marginTop:marginTop}}>
+
+        <h1>Use layoutEffect</h1>
+
+      </div>
       
     </div>
   )
 }
 
 export default App
-
-
-
-
-

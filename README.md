@@ -131,3 +131,10 @@ const memo = useMemo(()=>{
 
 },[count]) // count  change when usememo run
 `
+
+useContext 
+markdown "useContext"
+` useContext - ( useContext is a react component hook , this hook use to avoid props driling , useContext hook make state management easy and simple , to passing data in react app we need follow this step , 1. create a context 2.wrap children and gave value on provider 3.recive value from child) `
+useLayoutEffect
+markdown "useLayoutEffect"
+`useLayoutEffect run on before browser  paint the screen ( means when layout calcuate ) and it run synchronously and code execute line by line `
