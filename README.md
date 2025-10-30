@@ -129,5 +129,5 @@ const memo = useMemo(()=>{
 
     return i; /// remember this value 
 
-},[count]) // count change usememo run
+},[count]) // count  change when usememo run
 `

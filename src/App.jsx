@@ -1,32 +1,46 @@
 
 
 
-import React, { useCallback, useMemo, useRef, useState } from 'react'
+import React, { createContext, useCallback, useContext, useMemo, useRef, useState } from 'react'
+import Child from './Child';
+
+// create Context
+
+
+// eslint-disable-next-line react-refresh/only-export-components
+export const ThemeContext = createContext();
+
 
 function App() {
 
-  // useMemeo -> useMemo use to memorize value and improve perfomence
+  // prop driling work passing props to another component then another component passing props
+  // target component then come useContext hook help to passing data without prop driling 
+  // passing data one component to another component 
+
+   /// createContext 
+  //  wrap child
+  /// recive value on child component
+
+  const [ theme , setTheme ] = useState("white");
+
+  console.log(theme)
 
 
 
-  const [ count , setCount ] = useState(0); 
+
+
   
-  const handelInc = useCallback(()=>{
-
-    setCount((prev)=> prev+1);
-
-
-  },[])
+ 
   
 
 
   return (
     <div>
-      <MemorizedChild  count={count}/>
-      <h1>Count : {count}</h1>
-      <button onClick={()=> setCount(10)}>Same value</button>
+      <ThemeContext.Provider value={{theme, setTheme}}>
+        <Child/>
+
+      </ThemeContext.Provider>
       
-      <button onClick={handelInc}>update Count</button>
     </div>
   )
 }
@@ -34,45 +48,6 @@ function App() {
 export default App
 
 
-const MemorizedChild =  ({count})=>{
-    console.log("Rendering child");
-    let ans=0;
-      
-    const memo = useMemo(()=>{
-      
-      console.log("inside usememeo")
-      
-
-      const num = 100000000;
-       for(let i=0; i<num; i++)
-      {
-        if(i===1999+count)
-        {
-          ans=i+count;
-          break;
-
-        }
-        console.log(i)
-      }
-      return ans; /// rembember this value 
-    
-    },[count]); 
-    ///when count change  run useMemo
-    // care about dependecy
-
-    return (
-        <div>
-          ans:{memo}
-            <h1>Iam child {count}</h1>
-        </div>
-    )
-}
-// useMemo prevent from have calcluate
-
-
- 
 
 
 
-
-const Child= React.memo(MemorizedChild);
