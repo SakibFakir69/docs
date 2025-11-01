@@ -1,52 +1,31 @@
-
-
-
-import React from 'react'
-
-import withName from './components/withName'
-import withAuth from './components/withAuth'
-
-
-// test: -> access User based on role 
+import { baseApi } from "./axios/api";
+import React, { useEffect, useState } from "react";
 
 function App() {
+  const [data, setData] = useState([]);
 
+  useEffect(() => {
+    const fetchApi = async () => {
+      try {
+        const result = await baseApi.get("/todos");
 
-  const WithComponent2 = withAuth(Users2);
-  // pass component as argument
+        setData(result?.data);
+      } catch (error) {
+        if (error.response) {
+          console.log(error);
 
+          console.log(error.response.data);
+          console.log(error.response.status);
+          console.log(error.response.headers);
+        } else {
+          console.log(error);
+        }
+      }
+    };
+    fetchApi();
+  }, []);
 
-
-  
-
-  return (
-    <div>
-
-   
-      <WithComponent2/>
-      {/* show result and render component */}
-
-     
-      
-    </div>
-  )
+  return <div>total data: {data.length}</div>;
 }
 
-
-
-export default App
-
-
-
-
-const Users2 = ()=>{
-  // this component just show the props 
-
-  return (
-    <div>
-     
-     <h1>Admin dashboard</h1>
-
-    </div>
-  )
-}
+export default App;

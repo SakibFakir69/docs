@@ -138,3 +138,11 @@ markdown "useContext"
 useLayoutEffect
 markdown "useLayoutEffect"
 `useLayoutEffect run on before browser  paint the screen ( means when layout calcuate ) and it run synchronously and code execute line by line `
+
+
+
+high order Component
+markdown "highorderComponent"
+`
+high order component- ( high order component take a argument and return new component, high order omponent implementation are 3 step -> 1.create a hoc component 2.show props 3.use hoc component and pass component)
+`
