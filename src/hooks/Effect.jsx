@@ -3,10 +3,7 @@
 
 
 
-// Ngrok
-// Ngrok is a reverse proxy that create secure tunnel from public endpoint to localy running services
-// we can share our development port  locally to our client , Ngrok (expose our local development to internet)
-// Ngrok assign public url to our localhost
+
 
 
 import React, { useEffect, useState } from 'react'

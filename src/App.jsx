@@ -1,38 +1,52 @@
 
 
 
-import React, {  createContext, useEffect, useRef, useState } from 'react'
-export const myContext = createContext();
+import React from 'react'
 
-function App({children}) {
-
-
-  const myRef = useRef();
-  const prevRef = useRef();
-  const [ count , setCount ] = useState(0);
+import withName from './components/withName'
+import withAuth from './components/withAuth'
 
 
-  useEffect(()=>{
-    myRef.current.focus();
-    prevRef.current=count;
+// test: -> access User based on role 
+
+function App() {
 
 
-  },[count])
-  console.log(myRef.current)
-  console.log(prevRef.current , ' store previous estate')
+  const WithComponent2 = withAuth(Users2);
+  // pass component as argument
 
+
+
+  
 
   return (
     <div>
-     <myContext.Provider value={{count}}>
-      {Children}
-      {/* all children component render here
-       */}
 
-     </myContext.Provider>
+   
+      <WithComponent2/>
+      {/* show result and render component */}
+
+     
       
     </div>
   )
 }
 
+
+
 export default App
+
+
+
+
+const Users2 = ()=>{
+  // this component just show the props 
+
+  return (
+    <div>
+     
+     <h1>Admin dashboard</h1>
+
+    </div>
+  )
+}
