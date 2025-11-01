@@ -146,3 +146,42 @@ markdown "highorderComponent"
 `
 high order component- ( high order component take a argument and return new component, high order omponent implementation are 3 step -> 1.create a hoc component 2.show props 3.use hoc component and pass component)
 `
+
+
+
+axios 
+markdown "axios"
+`  axios - axios is a js library make http request more easy ( get,post,put,patch,delete ) no need to write extra js for this
+ request , and easily we can re-use 
+ step to use:
+ 1.install axios
+ 2.set up axios ( import axios from axios, const instance =axios.create({baseUrl:""})) 
+ 3.export base url
+ 4. const data = baseApi.(get,put,pathc);
+ `
+
+ react-router 
+ markdown 'react-router'
+ `
+react-router dom is a js library it provide routing , and we make spa(single page application) website with react router , react router have ( useNavigate use to navigate route, useLocation use to get current path location , navlink to to go link and navlink have own isActive class for better unstand which link have not own IsActive class )
+
+use:
+1.install react-router then use data mode 
+2. use createBrowserRoute([
+
+    {
+        path:'/',
+        element:<Home>,
+        children:[
+            {path:'',element:""},{}
+        ]
+    },
+    {
+        path:'',
+        element:"
+    }
+
+])
+
+
+ `
