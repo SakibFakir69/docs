@@ -6,6 +6,7 @@ import UserForm from './pages/UserForm'
 import CartContainer from './components/cart/CartContainer'
 import { useDispatch, useSelector } from 'react-redux'
 import { decrement, decrementByAmount, increment, incrementByAmount } from './redux/slices/counterSlice';
+import User from './components/User';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
     <div>
       
      <CartContainer/>
+     <User/>
 
     
 
