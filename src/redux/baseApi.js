@@ -38,6 +38,24 @@ export const baseApi = createApi({
             })
             ,
             invalidatesTags:['post']
+        }),
+        updateSingleinfo:builder.mutation({
+            query:(postId,data)=>({
+                url:`/post/${postId}`,
+                method:"PUT",
+            
+                body:data
+
+            })
+        }),
+        updateAllInfo:builder.mutation({
+           query:(postId,data)=>({
+                url:`/post/${postId}`,
+                method:"PUT",
+            
+                body:data
+
+            })
         })
         
     })
@@ -48,7 +66,7 @@ export const baseApi = createApi({
 
 
 
-export const {useGetPostQuery, useCreatePostMutation , useDeletePostMutation} =baseApi
+export const {useGetPostQuery, useCreatePostMutation , useDeletePostMutation,useUpdateAllInfoMutation, useUpdateSingleintoMutation} =baseApi
 
 
 export default baseApi;

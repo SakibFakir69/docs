@@ -4,7 +4,7 @@ import CartContainer from "./components/cart/CartContainer";
 import { useDispatch, useSelector } from "react-redux";
 
 import User from "./components/User";
-import { useCreatePostMutation, useDeletePostMutation } from "./redux/baseApi";
+import { useCreatePostMutation, useDeletePostMutation, useUpdateAllInfoMutation, useUpdateSingleintoMutation } from "./redux/baseApi";
 
 function App() {
   const value = useSelector((store) => {
@@ -16,6 +16,8 @@ function App() {
 
   const [createPost, { isloading }] = useCreatePostMutation();
   const {  deletePost} = useDeletePostMutation();
+  const {updateAllInfo} =useUpdateAllInfoMutation();
+  const {updateSingleinfo} = useUpdateSingleintoMutation();
 
   const handleCreatePost = async () => {
     const newPost = {
@@ -49,6 +51,31 @@ function App() {
     }
 
   }
+
+
+
+
+  const handleupdateAllInfo = async(id, data)=>{
+    try {
+      const result = await updateAllInfo(id,data);
+      console.log(result);
+      
+    } catch (error) {
+      console.log(error)
+      
+    }
+  }
+   const handleupdateSingleInfo = async(id, data)=>{
+    try {
+      const result = await updateSingleinfo(id,data);
+      console.log(result);
+      
+    } catch (error) {
+      console.log(error)
+      
+    }
+  }
+
 
   return (
     <div>
