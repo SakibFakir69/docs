@@ -191,4 +191,11 @@ use:
 Redux
 Markdown 'redux'
 `
+Redux toolkit is a state management tools  handel complex state 
+#set up 
+1. create a folder (redux) then create a store store.js
+2. gave a provider in react app root <provider store={store}> </App> </provider>
+3.create a slice - createSlice({ name, initalState, reducer:{ action , action , ....}})
+4. use ( 1.useSelector read value , 2.useDispatch to perfrom action )
+/// dispatch(Increment()) , payload , dispatch(action(10));
 `

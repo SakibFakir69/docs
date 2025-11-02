@@ -1,1 +1,17 @@
 @import "tailwindcss";
+@plugin "daisyui";
+
+.data-theme{
+    background-color:white;
+}
+
+
+[data-theme="light"] {
+  background-color: white;
+  color: black;
+}
+
+[data-theme="dark"] {
+  background-color: black;
+  color: white;
+}
