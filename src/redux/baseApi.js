@@ -29,6 +29,15 @@ export const baseApi = createApi({
                 body:newPost,
             
             })
+        }),
+
+        deletePost:builder.mutation({
+            query:(postId)=>({
+                url:`/post/${postId}`,
+                method:"DELETE"
+            })
+            ,
+            invalidatesTags:['post']
         })
         
     })
@@ -39,7 +48,7 @@ export const baseApi = createApi({
 
 
 
-export const {useGetPostQuery, useCreatePostMutation} =baseApi
+export const {useGetPostQuery, useCreatePostMutation , useDeletePostMutation} =baseApi
 
 
 export default baseApi;

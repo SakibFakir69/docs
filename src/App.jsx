@@ -2,14 +2,9 @@ import React from "react";
 import UserForm from "./pages/UserForm";
 import CartContainer from "./components/cart/CartContainer";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  decrement,
-  decrementByAmount,
-  increment,
-  incrementByAmount,
-} from "./redux/slices/counterSlice";
+
 import User from "./components/User";
-import { useCreatePostMutation } from "./redux/baseApi";
+import { useCreatePostMutation, useDeletePostMutation } from "./redux/baseApi";
 
 function App() {
   const value = useSelector((store) => {
@@ -20,6 +15,7 @@ function App() {
   console.log(value);
 
   const [createPost, { isloading }] = useCreatePostMutation();
+  const {  deletePost} = useDeletePostMutation();
 
   const handleCreatePost = async () => {
     const newPost = {
@@ -40,6 +36,20 @@ function App() {
     }
   };
 
+  const handleDeletePost = async()=>{
+
+    try {
+
+      const result = await deletePost(1);
+      console.log(result);
+      
+    } catch (error) {
+      console.log(error)
+      
+    }
+
+  }
+
   return (
     <div>
       <CartContainer />
@@ -48,6 +58,7 @@ function App() {
         <button className="btn btn-secondary" onClick={handleCreatePost}>
           Create post
         </button>
+        <button onClick={handleDeletePost} className="btn btn-secondary">Delete post</button>
         {isloading && <p>post is creating</p>}
       </div>
       <User />
