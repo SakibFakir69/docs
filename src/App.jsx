@@ -1,96 +1,22 @@
-import React from "react";
-import UserForm from "./pages/UserForm";
-import CartContainer from "./components/cart/CartContainer";
-import { useDispatch, useSelector } from "react-redux";
 
-import User from "./components/User";
-import { useCreatePostMutation, useDeletePostMutation, useUpdateAllInfoMutation, useUpdateSingleintoMutation } from "./redux/baseApi";
+
+
+
+import React from 'react'
 
 function App() {
-  const value = useSelector((store) => {
-    return store.counter;
-  });
-  const dispatch = useDispatch();
-  console.log(dispatch({ type: "increment" }));
-  console.log(value);
-
-  const [createPost, { isloading }] = useCreatePostMutation();
-  const {  deletePost} = useDeletePostMutation();
-  const {updateAllInfo} =useUpdateAllInfoMutation();
-  const {updateSingleinfo} = useUpdateSingleintoMutation();
-
-  const handleCreatePost = async () => {
-    const newPost = {
-      title: "My New Post",
-      body: "This is the content",
-      userId: 1,
-    };
-    console.log("created post")
-
-    try {
-      const result = await createPost(newPost).unwrap();
-      console.log(result, " result");
-
-      alert(result)
-
-    } catch (error) {
-      console.log(error , " error ");
-    }
-  };
-
-  const handleDeletePost = async()=>{
-
-    try {
-
-      const result = await deletePost(1);
-      console.log(result);
-      
-    } catch (error) {
-      console.log(error)
-      
-    }
-
-  }
 
 
 
-
-  const handleupdateAllInfo = async(id, data)=>{
-    try {
-      const result = await updateAllInfo(id,data);
-      console.log(result);
-      
-    } catch (error) {
-      console.log(error)
-      
-    }
-  }
-   const handleupdateSingleInfo = async(id, data)=>{
-    try {
-      const result = await updateSingleinfo(id,data);
-      console.log(result);
-      
-    } catch (error) {
-      console.log(error)
-      
-    }
-  }
 
 
   return (
     <div>
-      <CartContainer />
 
-      <div className="flex justify-center border mt-20">
-        <button className="btn btn-secondary" onClick={handleCreatePost}>
-          Create post
-        </button>
-        <button onClick={handleDeletePost} className="btn btn-secondary">Delete post</button>
-        {isloading && <p>post is creating</p>}
-      </div>
-      <User />
+  <button className='bg-yellow-300 text-white hover:bg-sky-400 w-30 p-2 h-10'>Hover me</button>
+      <button className='p-3 w-30 border focus:outline-4'>Focus</button>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
