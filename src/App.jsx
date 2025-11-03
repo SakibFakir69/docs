@@ -1,6 +1,12 @@
+import clsx from "clsx";
 import React from "react";
 
 function App() {
+
+
+  const isTrue = false;
+
+
   return (
     <div>
       <button className="bg-yellow-300 text-white hover:bg-sky-400 w-30 p-2 h-10">
@@ -78,6 +84,9 @@ function App() {
         <p className="text-5xl antialiased font-bold tracking-wide leading-1 underline indent-2.5 ">Text welcome</p>
 
       </div>
+
+      {/* condition */}
+      <p className={clsx('p-4', isTrue  && "text-4xl")}>Show</p>
     </div>
   );
 }
