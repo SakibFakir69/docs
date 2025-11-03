@@ -70,6 +70,14 @@ function App() {
           overflow
         </div>
       </div>
+
+
+      {/* typo */}
+
+      <div>
+        <p className="text-5xl antialiased font-bold tracking-wide leading-1 underline indent-2.5 ">Text welcome</p>
+
+      </div>
     </div>
   );
 }
