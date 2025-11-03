@@ -13,7 +13,7 @@ function App() {
       <div>
          {
           [1,2,3,5,6,7].map((item,key)=>(<div className=" first:
-          p-2 odd:bg-green-300 nth-last-[2]:underline invalid:border-pink-500" key={key}>
+          p-2 odd:bg-green-300 nth-last-[2]:underline invalid:border-pink-500 flex flex-col" key={key}>
 
             {item}
 
@@ -46,6 +46,18 @@ function App() {
     </div>
   ))}
 </div>
+
+
+
+
+{
+  [10,20,30].map((item)=> (
+    <div className="border m-4 border-green-400  space-x-3.5">
+
+      <p className="p-4 border h-20 w-20">{item}</p>
+    </div>
+  ))
+}
 
 
 
