@@ -60,6 +60,16 @@ function App() {
         <p className="inline border">welcome</p>
         <p className="block border"> welcome 2</p>
       </div>
+
+      <div className="relative shadow-2xl/40">
+        <div className="h-20 w-20 bg-red-300 z-50">
+          Box
+        </div>
+
+        <div className="border backdrop-blur-3xl filter h-20 w-40 absolute top-10 -z-50">
+          overflow
+        </div>
+      </div>
     </div>
   );
 }
